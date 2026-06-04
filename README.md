@@ -1,4 +1,15 @@
-# bastion
+<div align="center">
+  <img alt="bastion logo" src="./logo.svg" width="520" height="320">
+</div>
+
+![GitHub Release](https://img.shields.io/github/v/release/taka1156/bastion?sort=semver&display_name=release&color=60a5fa&link=https%3A%2F%2Fgithub.com%2Ftaka1156%2Fbastion%2Freleases%2F)
+![GitHub Release Date](https://img.shields.io/github/release-date/taka1156/bastion?color=60a5fa)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/taka1156/bastion/release.yml?logo=github&color=60a5fa)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/taka1156/bastion/main.yaml?event=push&logo=github&label=test&color=60a5fa)
+![GitHub License](https://img.shields.io/github/license/taka1156/bastion?color=60a5fa)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/taka1156/bastion?color=60a5fa&logo=go&logoColor=white)
+
+[日本語版はこちら](README.ja.md)
 
 A CLI tool for SSH host management and file synchronization via a `bastion.json` configuration file.
 
