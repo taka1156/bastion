@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Bastion Config",
+  "description": "Configuration file for bastion SSH host management",
+  "type": "object",
+  "required": [
+    "hosts"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "hosts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "ip",
+          "user"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name for this host",
+            "minLength": 1
+          },
+          "ip": {
+            "type": "string",
+            "description": "IP address of the target server",
+            "minLength": 1
+          },
+          "user": {
+            "type": "string",
+            "description": "SSH login user",
+            "minLength": 1
+          },
+          "port": {
+            "type": "integer",
+            "description": "SSH port number",
+            "minimum": 1,
+            "maximum": 65535,
+            "default": 22
+          },
+          "key": {
+            "type": "string",
+            "description": "Path to the SSH private key file",
+            "minLength": 1
+          },
+          "cloudflare": {
+            "type": "object",
+            "description": "Cloudflare Tunnel settings",
+            "required": [
+              "use_tunnel"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "use_tunnel": {
+                "type": "boolean",
+                "description": "Whether to route SSH through Cloudflare Tunnel"
+              },
+              "tunnel_token": {
+                "type": "string",
+                "description": "Cloudflare Tunnel token",
+                "minLength": 1
+              },
+              "subdomain": {
+                "type": "string",
+                "description": "Subdomain for the Cloudflare Tunnel hostname",
+                "minLength": 1
+              },
+              "domain": {
+                "type": "string",
+                "description": "Domain for the Cloudflare Tunnel hostname",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

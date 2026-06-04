@@ -1,0 +1,18 @@
+{
+  "$schema": "./bastion.schema.json",
+  "hosts": [
+    {
+      "name": "production",
+      "ip": "xxx.xxx.xxx.xxx",
+      "user": "ec2-user",
+      "port": 22,
+      "key": "key/prod.pem",
+      "cloudflare": {
+        "use_tunnel": true,
+        "tunnel_token": "xxx",
+        "subdomain": "prod",
+        "domain": "example.com"
+      }
+    }
+  ]
+}
